@@ -9,7 +9,7 @@ const stylesHandler = isProduction
     : "style-loader";
 
 const config = {
-    entry: "./src/index.js",
+    entry: "./src/index.jsx",
     output: {
         path: path.resolve(__dirname, "dist"),
     },
@@ -17,18 +17,16 @@ const config = {
         open: true,
         host: "localhost",
     },
-    plugins: [
+    plugins:
+        [
         new HtmlWebpackPlugin({
             template: "index.html",
         }),
-
-        // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
     module: {
         rules: [
             {
-                test: /\.(ts|tsx)$/i,
+                test: /\.(js|jsx)$/i,
                 loader: "ts-loader",
                 exclude: ["/node_modules/"],
             },
@@ -50,7 +48,7 @@ const config = {
         ],
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"],
+        extensions: [".tsx", ".ts", ".js", ".jsx"],
     },
 };
 

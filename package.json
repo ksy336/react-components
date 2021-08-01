@@ -2,7 +2,7 @@
   "name": "react-components",
   "version": "1.0.0",
   "description": "My webpack project",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production --node-env=production",
@@ -10,8 +10,8 @@
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
     "serve": "webpack serve",
-    "lint": "npx eslint . --ext .ts",
-    "fix": "npx eslint . --ext .ts --fix"
+    "lint": "npx eslint . --ext .js",
+    "fix": "npx eslint . --ext .js --fix"
   },
   "author": "",
   "license": "ISC",
