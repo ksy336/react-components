@@ -1,0 +1,163 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.search {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100vw;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.search-wrapper {
+    width: 600px;
+    height: 100px;
+    background-color: grey;
+    border-radius: 10px;
+}
+.btn {
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+.btn:hover {
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 10px;
+}
+
+.input-search {
+    margin-top: 35px;
+    margin-left: 45px;
+    display: inline-block;
+    width: 400px;
+    height: 30px;
+    background-image: url("../assets/search.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    border-radius: 10px;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    margin-bottom: 100px;
+}
+
+
+.cards-wrapper {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px 40px;
+}
+
+.cards-container {
+    width: 250px;
+    height: 250px;
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    border-radius: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cards-container:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    margin-top: 20px;
+
+    background-image: url("../assets/benoit-debaix-c-HGZNddplw-unsplash.jpg");
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6,
+.card7 {
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card1 {
+    background-image: url("../assets/charles-deluvio-jtmwD4i4v1U-unsplash.jpg");
+}
+.card2 {
+    background-image: url("../assets/samuel-regan-asante-wMkaMXTJjlQ-unsplash.jpg");
+
+}
+.card3 {
+    background-image: url("../assets/dekler-ph-jqt2nq7Tkjo-unsplash.jpg");
+
+}
+.card4 {
+    background-image: url("../assets/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg")
+}
+
+.card5 {
+    background-image: url("../assets/jakob-owens-CiUR8zISX60-unsplash.jpg");
+}
+.card6 {
+    background-image: url("../assets/kal-visuals-ub_WS9NcyBs-unsplash.jpg");
+}
+.card7 {
+    background-image: url("../assets/merch-husey-EEZgog4AS5M-unsplash.jpg");
+}
+
+.cards__text {
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    position: absolute;
+    top: 180px;
+    z-index: 100;
+}
+
+.cards__sign {
+    background-image: url("../assets/Time.svg");
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 210px;
+    cursor: pointer;
+}
