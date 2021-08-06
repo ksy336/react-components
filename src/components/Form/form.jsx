@@ -28,6 +28,7 @@ export const Form = ({setFormValues}) => {
         if (!birthday) {
             setError((state) => ({...state, birthday}));
         }
+        // addCard();
     }
 
     const handleSubmit = (event) => {
@@ -37,6 +38,13 @@ export const Form = ({setFormValues}) => {
             reset();
         }
     }
+    // const handleClick = (event) => {
+    //         train.classList.toggle('none');
+    //         play.classList.toggle('none');
+    //         btnStart.classList.toggle('active')
+    // }
+
+    // const addCard = (formValues) => {setFormValues(prev => [...prev, formValues]);} // функция отправляет данные формы в массив
 
     const reset = () => {
         setAgree(false);
@@ -93,8 +101,9 @@ export const Form = ({setFormValues}) => {
                         <option>Canada</option>
                     </select>
                 </label>
+
                 <label className="item agree-label" htmlFor="agree">
-                    <p>I agree... {error?.agree !== undefined && <span className="error"> * agree should be check</span> } </p>
+                    <p className="agree">I agree...{error?.agree !== undefined && <span className="error"> * agree should be check</span> } </p>
                     <input type="checkbox"
                            className="input-agree"
                            name="agree"
@@ -102,6 +111,15 @@ export const Form = ({setFormValues}) => {
                            onChange={() => setAgree(prev => !prev)}
                     />
                 </label>
+
+                <div className="switch">
+                    <input type="checkbox" className="checkbox" id="checkbox" />
+                        <label htmlFor="checkbox" className="checkbox-label"/>
+                        <span className="train">Agree</span>
+                        <span className="play none"/>
+                        <span className="switch-bg"/>
+                </div>
+
                 <div className="button">
                     <input type="submit" value="Send" />
                 </div>
