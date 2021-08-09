@@ -1,9 +1,8 @@
 
-import './index.css';
-import App from './App';
-import { ReactDOM } from "react";
-import React = require('react');
-
+import './components/Form/form.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../App';
 
 ReactDOM.render(
     <React.StrictMode>

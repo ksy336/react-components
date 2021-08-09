@@ -24,7 +24,7 @@
     margin-right: 30px;
     margin-bottom: 30px;
 }
-.item input {
+ input {
     font-family: Montserrat, sans-serif;
     border-radius: 10px;
     margin-left: 30px;
@@ -173,4 +173,19 @@
 .agree{
     font-family: Montserrat, sans-serif;
     border-radius: 10px;
+}
+
+.search-gr {
+    margin-bottom: 20px;
+}
+
+.search-gr > input {
+    margin-right: 16px;
+}
+
+.radios {
+    margin: 10px 0;
+}
+.radios label {
+    display: block;
 }
