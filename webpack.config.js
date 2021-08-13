@@ -1,35 +1,32 @@
-import {webpack} from "webpack";
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const BrowserRouter = require("react-router-dom").BrowserRouter;
-const Route = require("react-router-dom").Route;
-const Link = require("react-router-dom").Link;
-
+const { BrowserRouter } = require('react-router-dom');
+const { Route } = require('react-router-dom');
+const { Link } = require('react-router-dom');
 
 const isProduction = process.env.NODE_ENV === 'production';
-
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
   : 'style-loader';
-
 const config = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   devServer: {
     historyApiFallback: true,
     contentBasePublicPath: path.join(__dirname, 'dist'),
     open: true,
     host: 'localhost',
+    port: 8080,
+    contentBase: './',
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/

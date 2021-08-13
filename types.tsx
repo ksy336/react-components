@@ -1,4 +1,5 @@
 export interface Article {
+    id: number,
     author: string;
     content: string;
     description: string;
@@ -17,3 +18,5 @@ export enum SortType {
     popularity = 'popularity',
     publishedAt = 'publishedAt',
 }
+
+
