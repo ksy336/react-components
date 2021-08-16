@@ -231,13 +231,6 @@ li {
     transform: scale(1.1);
     background-color: yellow;
 }
-.main-info {
-    text-align: center;
-    font-size: 22px;
-    font-family: Montserrat, sans-serif;
-    width: 800px;
-    margin: 0 auto;
-}
 .btn {
     width: 100px;
     margin-left: 30px;
@@ -251,6 +244,49 @@ table {
     width: 100vw;
     height: 70px;
     background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-400px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+.page {
+    position: absolute;
+}
+.page-enter-active {
+   opacity: 1;
+    transform: translate(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.page-exit-active {
+    opacity: 0;
+    transform: translate(100%);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.main-info {
+    text-align: center;
+    font-size: 22px;
+    font-family: Montserrat, sans-serif;
+    width: 800px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
 }

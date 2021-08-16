@@ -13,7 +13,7 @@ interface ArticleProps {
 export const Articles: FC<ArticleProps> = ({ articles, page, onChangePage }) => {
   const [artPage, setArtPage] = useState<number | string>('');
   const [data, setData] = useState(null);
-  const { id } = useParams<{ id: string }>();
+
 
   useEffect(() => {
     setArtPage(page);
@@ -47,7 +47,7 @@ export const Articles: FC<ArticleProps> = ({ articles, page, onChangePage }) => 
               author, title, publishedAt, urlToImage,
             }, idx: number) => (
               <tr key={idx}>
-                <td><Link to={`/details/${id}`}>{title}</Link></td>
+                <td><Link to={`/details/${title}`}>{title}</Link></td>
                 <td>{author}</td>
                 <td>{publishedAt}</td>
                 <td>

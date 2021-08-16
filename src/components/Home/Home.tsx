@@ -32,7 +32,7 @@ export const Home = () => {
     setSearchValue(value);
   };
   return (
-    <div>
+    <div className="page">
       <form className="search-group" action="" onSubmit={handleSubmit}>
         <label htmlFor="search">
           <input className="input" id="search" type="text" value={searchValue} onChange={handleChange} disabled={isLoading} />
