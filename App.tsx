@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Home from './src/components/Home/Home.tsx';
-import { connect } from "react-redux";
 import Details from './src/components/Details/Details.tsx';
 import NotFound from './src/pages/Not-found.tsx';
 import About from './src/components/About/about.tsx';

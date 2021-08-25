@@ -1,39 +1,29 @@
 import './home.css';
-import React, { ChangeEvent, useState } from 'react';
-
-import { AxiosResponse } from 'axios';
-import axios from '../../services/api';
+import React, { ChangeEvent, useState, useEffect } from 'react';
 import { Article, GET200_Articles, SortType } from '../../../types';
 import { Articles } from '../Articles/Articles';
-
-const API_KEY = '7b5c94d160d64e8d8e352ed0706d333b';
+import { useActions } from '../../redux/hooks/useActions';
 
 export const Home = () => {
+  const { searchArticles } = useActions();
   const [searchValue, setSearchValue] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [articles, setArticles] = useState<Article[]>([]);
   const [sortBy, setSortBy] = useState<SortType>(SortType.popularity);
   const [page, setPage] = useState<number>(1);
 
-  const handleSubmit = async (event: ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsLoading(true);
-    try {
-      const response: AxiosResponse<GET200_Articles> = await axios.get(`https://newsapi.org/v2/everything?q=${searchValue}&apiKey=${API_KEY}&sortBy=${sortBy}&pageSize=10&page=${page}`);
-      setArticles(response.data.articles);
-    } catch (err: any) {
-      console.error(err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setSearchValue(value);
   };
+
+  useEffect(() => {
+    searchArticles();
+  }, []);
+
   return (
     <div className="page">
-      <form className="search-group" action="" onSubmit={handleSubmit}>
+      <form className="search-group" action="" onSubmit={searchArticles}>
         <label htmlFor="search">
           <input className="input" id="search" type="text" value={searchValue} onChange={handleChange} disabled={isLoading} />
           <button className="btn" type="submit" disabled={isLoading}>{isLoading ? 'Searching...' : 'Search'}</button>
@@ -77,7 +67,8 @@ export const Home = () => {
       <Articles
         articles={articles}
         page={page}
-        onChangePage={(pageFromInput: number) => setPage(pageFromInput)} />
+        onChangePage={(pageFromInput: number) => setPage(pageFromInput)}
+      />
     </div>
   );
 };
