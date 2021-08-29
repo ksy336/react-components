@@ -4,7 +4,7 @@ import React, {
 import { Link, useParams } from 'react-router-dom';
 import { useActions } from "../../redux/hooks/useActions";
 
-export const Details: React.FC = () => {
+const Details: React.FC = () => {
   const [data, setData] = useState(null);
   const { id } = useParams<{ id: null }>();
   const { title } = useParams<{ title: string }>();

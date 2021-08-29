@@ -1,5 +1,5 @@
 export interface HomeState {
-    articles: any[];
+    news: any[];
     loading: boolean;
     error: null | string;
 }

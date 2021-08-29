@@ -2,15 +2,13 @@ import './home.css';
 import React, { ChangeEvent, useState, useEffect } from 'react';
 import { Article, GET200_Articles, SortType } from '../../../types';
 import { Articles } from '../Articles/Articles';
-import { useActions } from '../../redux/hooks/useActions';
 
-export const Home = () => {
-  const { searchArticles } = useActions();
+const Home: React.FC = (news, searchArticles) => {
   const [searchValue, setSearchValue] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [articles, setArticles] = useState<Article[]>([]);
   const [sortBy, setSortBy] = useState<SortType>(SortType.popularity);
   const [page, setPage] = useState<number>(1);
+  const [articles, setArticles] = useState<Article[]>([]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -23,7 +21,7 @@ export const Home = () => {
 
   return (
     <div className="page">
-      <form className="search-group" action="" onSubmit={searchArticles}>
+      <form className="search-group" action="" onSubmit={() => searchArticles()}>
         <label htmlFor="search">
           <input className="input" id="search" type="text" value={searchValue} onChange={handleChange} disabled={isLoading} />
           <button className="btn" type="submit" disabled={isLoading}>{isLoading ? 'Searching...' : 'Search'}</button>
