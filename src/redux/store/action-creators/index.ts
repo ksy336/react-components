@@ -1,5 +1,7 @@
-import * as HomeActionCreators from './home';
-import * as DetailsActionCreators from './details';
+// @ts-ignore
+import * as HomeActionCreators from './home.ts';
+// @ts-ignore
+import * as DetailsActionCreators from './details.ts';
 
 export default {
   ...HomeActionCreators,

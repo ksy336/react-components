@@ -1,9 +1,10 @@
 import './home.css';
 import React, { ChangeEvent, useState, useEffect } from 'react';
 import { Article, GET200_Articles, SortType } from '../../../types';
-import { Articles } from '../Articles/Articles';
+import { Articles } from '../Articles/Articles.tsx';
 
-const Home: React.FC = (news, searchArticles) => {
+const Home: React.FC = ({ news, searchArticles }: any) => {
+  console.log(news, searchArticles);
   const [searchValue, setSearchValue] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [sortBy, setSortBy] = useState<SortType>(SortType.popularity);

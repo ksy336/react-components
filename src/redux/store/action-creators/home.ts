@@ -1,15 +1,16 @@
 import { Dispatch } from 'redux';
 import axios from 'axios';
 import { useState } from 'react';
-import { HomeAction, HomeActionTypes } from '../../types/home';
-import { SortType } from '../../../../types';
+// @ts-ignore
+import { HomeAction, HomeActionTypes } from '../../types/home.ts';
+import { SortType } from '../../../../types.tsx';
 
 const API_KEY = '7b5c94d160d64e8d8e352ed0706d333b';
 
-export const searchArticles = () => {
-  const [searchValue, setSearchValue] = useState<string>('');
-  const [sortBy, setSortBy] = useState<SortType>(SortType.popularity);
-  const [page, setPage] = useState<number>(1);
+const searchArticles = () => {
+  const [searchValue] = useState<string>('');
+  const [sortBy] = useState<SortType>(SortType.popularity);
+  const [page] = useState<number>(1);
 
   return async (dispatch: Dispatch<HomeAction>) => {
     try {
@@ -23,3 +24,4 @@ export const searchArticles = () => {
     }
   };
 };
+export default searchArticles;

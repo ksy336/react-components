@@ -1,4 +1,5 @@
-import { HomeAction, HomeActionTypes, HomeState } from '../../types/home';
+// @ts-ignore
+import { HomeAction, HomeActionTypes, HomeState } from '../../types/home.ts';
 
 const initialState: HomeState = {
   news: [],

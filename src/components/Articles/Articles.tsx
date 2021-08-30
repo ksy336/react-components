@@ -10,10 +10,9 @@ interface ArticleProps {
     page: number;
     onChangePage: (pageFromInput: number) => void;
 }
+// eslint-disable-next-line import/prefer-default-export
 export const Articles: FC<ArticleProps> = ({ articles, page, onChangePage }) => {
   const [artPage, setArtPage] = useState<number | string>('');
-  const [data, setData] = useState(null);
-
 
   useEffect(() => {
     setArtPage(page);

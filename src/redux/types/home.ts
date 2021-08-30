@@ -4,7 +4,9 @@ export interface HomeState {
     error: null | string;
 }
 export enum HomeActionTypes {
+    // eslint-disable-next-line no-unused-vars
     FETCH_ARTICLES = 'FETCH_ARTICLES',
+    // eslint-disable-next-line no-unused-vars
     FETCH_ARTICLES_SUCCESS = 'FETCH_ARTICLES_SUCCESS',
     FETCH_ARTICLES_ERROR = 'FETCH_ARTICLES_ERROR',
 }

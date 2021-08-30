@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { searchReducer } from './searchReducer';
-import { detailsReducer } from './detailsReducer';
+// @ts-ignore
+import { searchReducer } from './searchReducer.ts';
+// @ts-ignore
+import { detailsReducer } from './detailsReducer.ts';
 
 export const rootReducer = combineReducers({
   search: searchReducer,

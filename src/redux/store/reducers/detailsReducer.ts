@@ -1,4 +1,5 @@
-import { DetailsAction, DetailsActionTypes, DetailsState } from '../../types/details';
+// @ts-ignore
+import { DetailsAction, DetailsActionTypes, DetailsState } from '../../types/details.ts';
 
 const initialState: DetailsState = {
   articles: [],
