@@ -1,15 +1,36 @@
 import './home.css';
 import React, { ChangeEvent, useState, useEffect } from 'react';
-import { Article, GET200_Articles, SortType } from '../../../types';
+
+// @ts-ignore
 import { Articles } from '../Articles/Articles.tsx';
 
+enum SortType {
+  relevancy = 'relevancy',
+  popularity = 'popularity',
+  publishedAt = 'publishedAt',
+}
+
+ interface Article {
+  id: number,
+  author: string;
+  content: string;
+  description: string;
+  publishedAt: string;
+  source: {id: string; name: string};
+  title: string;
+  urlToImage: string;
+}
+
+ interface GET200_Articles {
+  articles: Article[];
+}
 const Home: React.FC = ({ news, searchArticles }: any) => {
   console.log(news, searchArticles);
   const [searchValue, setSearchValue] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [sortBy, setSortBy] = useState<SortType>(SortType.popularity);
   const [page, setPage] = useState<number>(1);
   const [articles, setArticles] = useState<Article[]>([]);
+  const [sortBy, setSortBy] = useState<SortType>(SortType.popularity);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;

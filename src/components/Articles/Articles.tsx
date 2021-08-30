@@ -2,8 +2,23 @@ import React, {
   ChangeEvent, FC, useEffect, useState,
 } from 'react';
 import {Link, useParams} from 'react-router-dom';
-import { Article } from '../../../types';
 import '../Home/home.css';
+enum SortType {
+  relevancy = 'relevancy',
+  popularity = 'popularity',
+  publishedAt = 'publishedAt',
+}
+
+interface Article {
+  id: number,
+  author: string;
+  content: string;
+  description: string;
+  publishedAt: string;
+  source: {id: string; name: string};
+  title: string;
+  urlToImage: string;
+}
 
 interface ArticleProps {
     articles: Article[];

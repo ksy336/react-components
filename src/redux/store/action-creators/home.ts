@@ -3,8 +3,10 @@ import axios from 'axios';
 import { useState } from 'react';
 // @ts-ignore
 import { HomeAction, HomeActionTypes } from '../../types/home.ts';
-import { SortType } from '../../../../types.tsx';
 
+ enum SortType {
+  popularity = 'popularity',
+}
 const API_KEY = '7b5c94d160d64e8d8e352ed0706d333b';
 
 const searchArticles = () => {

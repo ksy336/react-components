@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import Home from '../../components/Home/Home.tsx';
 
-// eslint-disable-next-line import/extensions
-import searchArticles from '../store/action-creators/home';
+// @ts-ignore
+import searchArticles from '../store/action-creators/home.ts';
 
-// eslint-disable-next-line import/extensions
-import { HomeState } from '../types/home';
+// @ts-ignore
+import { HomeState } from '../types/home.ts';
 
 const mapStateToProps = (state: HomeState) => ({
   news: state.news,
